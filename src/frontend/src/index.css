@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "BricolageGrotesque";
+  src: url("/assets/fonts/BricolageGrotesque.woff2") format("woff2");
+  font-weight: 200 800;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PlusJakartaSans";
+  src: url("/assets/fonts/PlusJakartaSans.woff2") format("woff2");
+  font-weight: 300 700;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+    --background: 0.155 0.012 195;
+    --foreground: 0.963 0.004 210;
+    --card: 0.19 0.015 195;
+    --card-foreground: 0.963 0.004 210;
+    --popover: 0.2 0.015 195;
+    --popover-foreground: 0.963 0.004 210;
+    --primary: 0.68 0.12 185;
+    --primary-foreground: 0.12 0.01 195;
+    --secondary: 0.22 0.018 195;
+    --secondary-foreground: 0.963 0.004 210;
+    --muted: 0.22 0.018 195;
+    --muted-foreground: 0.705 0.015 210;
+    --accent: 0.68 0.12 185;
+    --accent-foreground: 0.12 0.01 195;
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+    --border: 0.28 0.02 195;
+    --input: 0.25 0.018 195;
+    --ring: 0.68 0.12 185;
+    --teal: 0.68 0.12 185;
+    --teal-light: 0.74 0.1 185;
+    --orange: 0.65 0.14 55;
+    --chart-1: 0.68 0.12 185;
+    --chart-2: 0.65 0.14 55;
+    --chart-3: 0.769 0.188 70.08;
+    --chart-4: 0.627 0.265 303.9;
+    --chart-5: 0.645 0.246 16.439;
+    --sidebar: 0.19 0.015 195;
+    --sidebar-foreground: 0.963 0.004 210;
+    --sidebar-primary: 0.68 0.12 185;
+    --sidebar-primary-foreground: 0.12 0.01 195;
+    --sidebar-accent: 0.22 0.018 195;
+    --sidebar-accent-foreground: 0.963 0.004 210;
+    --sidebar-border: 0.28 0.02 195;
+    --sidebar-ring: 0.68 0.12 185;
+  }
+
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: "PlusJakartaSans", sans-serif;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: oklch(var(--background));
+  }
+  ::-webkit-scrollbar-thumb {
+    background: oklch(var(--border));
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: oklch(var(--teal));
+  }
+}
